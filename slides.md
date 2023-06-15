@@ -342,14 +342,43 @@ runn ではシナリオのステップの再利用がしやすくデータの独
 -->
 
 ---
+layout: two-cols-header
+---
 
 # <material-symbols-counter-5 />テストを効率的に書ける
+
+::left::
 
 - サーバーサイドの言語に依存せずにテストを書くことができる  
 <RunnSvgIcon/> yamlでOpenAPIのSpecライクに記述できる
 - テスト観点が明確で記述量が少ないテストでレビューもし易い  
 コントローラーテストをモックなしでテストを書くのに比べても記述量が少なくて済む  
 - テストデータの準備もシナリオで定義し、見通しの良いテストとなる  
+
+::right::
+
+```yml
+steps:
+  createUser:
+    desc: Create User APIのテスト（IDが発行される）
+    req:
+      /user:
+        post:
+          body:
+            application/json:
+              username: "alice"
+              email: "alice@example.com"
+    test: steps.createUser.res.status == 200
+  updateUser:
+    desc: Updated User APIのテスト（aliceをbobに変更する）
+    req:
+      /user/{{ steps.createUser.res.body.id }}:
+        put:
+          body:
+            application/json:
+              username: "bob"
+    test: steps.updateUser.res.status == 200
+```
 
 <!--
 runn自体がシナリオテストをUnitテスト並みに簡単にするツールとして [開発されました])(https://speakerdeck.com/k1low/stac2022?slide=28)。  

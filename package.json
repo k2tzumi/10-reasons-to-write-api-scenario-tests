@@ -17,14 +17,14 @@
     "slidev-addon-rabbit": "^0.1.0"
   },
   "devDependencies": {
-    "@iconify-json/devicon": "^1.1.9",
+    "@iconify-json/devicon": "^1.1.11",
     "@iconify-json/emojione": "^1.1.6",
     "@iconify-json/emojione-monotone": "^1.1.4",
     "@iconify-json/fxemoji": "^1.1.4",
     "@iconify-json/ic": "^1.1.13",
-    "@iconify-json/logos": "^1.1.31",
+    "@iconify-json/logos": "^1.1.33",
     "@iconify-json/material-symbols": "^1.1.47",
-    "@iconify-json/simple-icons": "^1.1.55",
+    "@iconify-json/simple-icons": "^1.1.56",
     "@iconify-json/uim": "^1.1.5",
     "playwright-chromium": "^1.35.0"
   },
